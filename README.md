@@ -104,11 +104,10 @@ src/
 │   ├── auth.controller.ts
 │   ├── auth.service.ts
 │   ├── auth.guard.ts
-│   └── dto/
-│       ├── sign-up.dto.ts
-│       └── sign-in.dto.ts
+│   ├── auth.module.ts
+│   └── Dtos/
+│       └── auth.ts
 ├── prisma/
-│   ├── prisma.service.ts
 │   └── schema.prisma
 ├── main.ts
 └── app.module.ts
