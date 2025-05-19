@@ -21,7 +21,7 @@ Este é um projeto de API de autenticação utilizando NestJS, JWT, Prisma e Pos
 
 ```bash
 git clone https://github.com/Italodutraa/FirstAuthAPI.git
-cd FirstAuthAPI
+cd AuthAPI
 ```
 
 2. **Instale as dependências:**
