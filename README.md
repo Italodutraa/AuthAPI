@@ -1,98 +1,121 @@
-FirstAuthAPI - API de Autenticação com NestJS
+# FirstAuthAPI - API de Autenticação com NestJS
 
 Este é um projeto de API de autenticação utilizando NestJS, JWT, Prisma e PostgreSQL com suporte para Docker. A aplicação permite o registro de usuários, login e proteção de rotas usando tokens JWT.
 
-🛠️ Tecnologias Utilizadas
+---
 
-NestJS - Framework Node.js para construção de APIs escaláveis.
+## 🛠️ Tecnologias Utilizadas
 
-TypeScript - Superset do JavaScript com tipagem estática.
+- **NestJS** - Framework Node.js para construção de APIs escaláveis.
+- **TypeScript** - Superset do JavaScript com tipagem estática.
+- **Prisma** - ORM moderno e type-safe.
+- **PostgreSQL** - Banco de dados relacional utilizado via Docker.
+- **JWT (JSON Web Token)** - Autenticação baseada em tokens.
+- **Docker** - Contêiner para o banco de dados PostgreSQL.
 
-Prisma - ORM moderno e type-safe.
+---
 
-PostgreSQL - Banco de dados relacional utilizado via Docker.
+## 📦 Instalação e Configuração
 
-JWT (JSON Web Token) - Autenticação baseada em tokens.
+1. **Clone o repositório:**
 
-Docker - Contêiner para o banco de dados PostgreSQL.
-
-📦 Instalação e Configuração
-
-Clone o repositório:
-
+```bash
 git clone https://github.com/Italodutraa/FirstAuthAPI.git
 cd FirstAuthAPI
+```
 
-Instale as dependências:
+2. **Instale as dependências:**
 
+```bash
 npm install
+```
 
-Crie o arquivo .env:
+3. **Crie o arquivo `.env`:**
 
+```env
 DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/database"
 JWT_SECRET="sua-chave-secreta"
+```
 
-Suba o banco de dados com Docker:
+4. **Suba o banco de dados com Docker:**
 
+```bash
 docker-compose up -d
+```
 
-Execute as migrations:
+5. **Execute as migrations:**
 
+```bash
 npx prisma migrate dev
+```
 
-Inicie o servidor:
+6. **Inicie o servidor:**
 
+```bash
 npm run start:dev
+```
 
-🛠️ Uso da API
+---
 
-Cadastro (SignUp):
+## 🛠️ Uso da API
 
-Endpoint: POST /auth/signup
+- **Cadastro (SignUp):**
 
-Body:
+  - Endpoint: `POST /auth/signup`
+  - Body:
 
-{
-"name": "Seu Nome",
-"email": "email@example.com",
-"password": "senha123"
-}
+    ```json
+    {
+      "name": "Seu Nome",
+      "email": "email@example.com",
+      "password": "senha123"
+    }
+    ```
 
-Login (SignIn):
+- **Login (SignIn):**
 
-Endpoint: POST /auth/signin
+  - Endpoint: `POST /auth/signin`
+  - Body:
 
-Body:
+    ```json
+    {
+      "email": "email@example.com",
+      "password": "senha123"
+    }
+    ```
 
-{
-"email": "email@example.com",
-"password": "senha123"
-}
+- **Endpoint Protegido:**
 
-Endpoint Protegido:
+  - Use o token JWT no header:
 
-Use o token JWT no header:
+    ```json
+    {
+      "Authorization": "Bearer SEU_TOKEN"
+    }
+    ```
 
-{
-"Authorization": "Bearer SEU_TOKEN"
-}
+---
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
+```
 src/
 ├── auth/
-│ ├── auth.controller.ts
-│ ├── auth.service.ts
-│ ├── auth.guard.ts
-│ └── dto/
-│ ├── sign-up.dto.ts
-│ └── sign-in.dto.ts
+│   ├── auth.controller.ts
+│   ├── auth.service.ts
+│   ├── auth.guard.ts
+│   └── dto/
+│       ├── sign-up.dto.ts
+│       └── sign-in.dto.ts
 ├── prisma/
-│ ├── prisma.service.ts
-│ └── schema.prisma
+│   ├── prisma.service.ts
+│   └── schema.prisma
 ├── main.ts
 └── app.module.ts
+```
 
-📝 Licença
+---
 
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
