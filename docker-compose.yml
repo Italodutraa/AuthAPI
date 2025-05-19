@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: meu_postgres
+    environment:
+      POSTGRES_USER: italo
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: MB_TS
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data:/var/lib/postgresql/data
