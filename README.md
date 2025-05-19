@@ -1,4 +1,4 @@
-# FirstAuthAPI - API de Autenticação com NestJS
+# AuthAPI - API de Autenticação com NestJS
 
 Este é um projeto de API de autenticação utilizando NestJS, JWT, Prisma e PostgreSQL com suporte para Docker. A aplicação permite o registro de usuários, login e proteção de rotas usando tokens JWT.
 
